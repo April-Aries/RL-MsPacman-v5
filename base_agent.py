@@ -103,6 +103,7 @@ class DQNBaseAgent(ABC):
 		for i in range(self.eval_episode):
 			observation, info = self.test_env.reset()
 			total_reward = 0
+            # self.test_env.start_video_recorder()
 			while True:
 				self.test_env.render()
 				action = self.decide_agent_actions(observation, self.eval_epsilon, self.test_env.action_space)
